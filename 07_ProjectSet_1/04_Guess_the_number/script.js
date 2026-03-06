@@ -58,17 +58,38 @@ function checkGuess(guess){
 }
 
 function displayGuess(guess){
-    //
+    userInput.value = ''
+    guessSlots.innerHTML += `${guess},   `
+    newGuess ++
+    remaining.innerHTML = `${11 - newGuess}`
 }
 
 function displayMessage(message){
-    //
+    lowerhi.innerHTML = `<h2> ${message}</h2>`
 }
 
 function endGame(){
-    //
+    userInput.value = ''
+    userInput.setAttribute('disabled', '')
+    p.classList.add('button')
+    p.innerHTML = `<h2 id="newGame">Start new Game</h2>`
+    startOver.appendChild(p)
+    playGame = false
+    newGame()
+
 }
 
 function newGame(){
-    //
+    const newGameButton = document.querySelector('#newGame');
+    newGameButton.addEventListener('click', function (e) {
+       randomNumber = parseInt(Math.random() * 100 + 1);
+       prevGuess = [];
+       newGuess = 1;
+       guessSlots.innerHTML = '';
+       remaining.innerHTML = `${11 - numGuess} `;
+       userInput.removeAttribute('disabled');
+       startOver.removeChild(p);
+
+       playGame = true;
+  });
 }
