@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaSCript</title>
+</head>
+<body>
+    <h1>Press The button</h1>
+    <button id="stop">Stop</button>
+</body>
+<script>
+    const Alarm = function() {
+        console.log("Asad");
+        
+    }
+    const changeText = function(){
+        document.querySelector('h1').innerHTML = "Real Madrid"
+    }
+
+    const M = setTimeout(changeText, 2000)
+
+    document.querySelector("#stop").addEventListener('click', function(){
+        clearTimeout(M)
+        console.log("stopped");
+        
+    })
+</script>
+</html>

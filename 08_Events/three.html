@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Hello World</h1>
+    <button id="start">Start</button>
+    <button id="stop">Stop</button>
+</body>
+<script>
+    const sayName = function(){
+        document.querySelector('#start').addEventListener("click", function(){
+           console.log("Asad", Date.now());
+           
+        })
+        
+    }
+    setInterval(sayName, 1000)
+
+</script>
+</html>
